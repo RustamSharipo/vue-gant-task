@@ -47,7 +47,29 @@ ul{
     display: flex;
     gap: 20px;
 }
-.header__links router-link{
-    margin-left: 30px;
+.header__ul{
+    gap: 30px;
     font-size: 25px;
+    display: flex;
+}
+.documentations__link{
+    font-weight: 600;
+    font-size: 19px;
+    box-shadow: 0 0 5px 0;
+    color: black;
+    border-radius: 10px;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    margin-left: 15px;
+    transition: .5s;
+    border-bottom: 2px solid gray;
+}
+.documentations__items{
+    position: absolute;
+    top: 50%;
+    left: 35%;
+}
+.documentations__link:hover{
+    background: lightgray;
+    transition: .5s;
 }

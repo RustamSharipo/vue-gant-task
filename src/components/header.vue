@@ -5,12 +5,14 @@
         <div class="container">
           <div class="header__nav">
             <div class="header__nav_title">
-              <img src="@/assets/images/menu.png" alt="" />
               <h1 class="header__title">Gantt Elastic demo</h1>
             </div>
             <div class="header__links">
-              <router-link to="/">Demo</router-link>
-              <router-link to="/documentation">Documentation</router-link>
+              <ul class="header__ul">
+                <li v-for="link in links" :key="link.url">
+                  <router-link :to="link.url">{{ link.title }}</router-link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -20,7 +22,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props:['links']
+};
 </script>
 
 <style>
