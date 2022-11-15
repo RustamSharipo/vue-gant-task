@@ -73,3 +73,10 @@ ul{
     background: lightgray;
     transition: .5s;
 }
+.task-list-header-label{
+    text-align: center;
+    width: 100%;
+}
+.task-list-item-value-container{
+    text-align: center;
+}

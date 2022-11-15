@@ -11,6 +11,7 @@
     "dayjs": "^1.11.6",
     "gantt-elastic": "^1.0.12",
     "gantt-elastic-header": "^0.1.11",
+    "gantt-elastic-wrapvue3": "^0.0.18",
     "vue": "^3.2.13",
     "vue-router": "^4.1.6"
   },
