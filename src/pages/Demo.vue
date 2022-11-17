@@ -1,5 +1,5 @@
 <template>
-  <header>hello gantt</header>
+  <h1>hello gantt</h1>
 
   <div>
     <GanttElastic :options="options" :tasks="tasks">
@@ -12,7 +12,7 @@
 <script>
 import dayjs from "dayjs";
 import { GanttElastic, GanttElasticHeader2 } from "gantt-elastic-wrapvue3";
-import "gantt-elastic-wrapvue3";
+import "gantt-elastic-wrapvue3/dist/style.css";
 
 export default {
   components: {
@@ -47,13 +47,13 @@ export default {
               fill: "#1EBC61",
               stroke: "#0EAC51",
             },
-            /*'tree-row-bar': {
+            'tree-row-bar': {
             fill: '#1EBC61',
             stroke: '#0EAC51'
           },
           'tree-row-bar-polygon': {
             stroke: '#0EAC51'
-          }*/
+          }
           },
         },
         {
@@ -167,13 +167,13 @@ export default {
               fill: "#8E44AD",
               stroke: "#7E349D",
             },
-            /*'tree-row-bar-polygon': {
+            'tree-row-bar-polygon': {
             stroke: '#7E349D'
           },
           'tree-row-bar': {
             fill: '#8E44AD',
             stroke: '#7E349D'
-          }*/
+          }
           },
         },
         {
@@ -231,6 +231,15 @@ export default {
               label: "%",
               value: "progress",
               width: 35,
+              style: {
+                "task-list-header-label": {
+                  "text-align": "center",
+                  width: "100%",
+                },
+                "task-list-item-value-container": {
+                  "text-align": "center",
+                },
+              },
             },
           ],
         },
@@ -239,12 +248,12 @@ export default {
   },
   methods: {
     getDate(hours) {
-      const date = new Date();
-      const year = date.getFullYear();
-      const month = date.getMonth() + 1;
-      const day = date.getDate();
+      const currentDate = new Date();
+      const currentYear = currentDate.getFullYear();
+      const currentMonth = currentDate.getMonth() + 1;
+      const currentDay = currentDate.getDate();
       const timeStamp = new Date(
-        `${day}-${month}-${year} 00:00:00`
+        `${currentDay}-${currentMonth}-${currentYear} 00:00:00`
       ).getTime();
       return new Date(timeStamp + hours * 60 * 60 * 1000).getTime();
     },
